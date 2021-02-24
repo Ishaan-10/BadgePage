@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <nav class="navbar fixed-top black navbar-expand-lg navynavprat">
+  <nav class="navbar fixed-top black navbar-expand-sm navynavprat">
     <div class="navbar-brand">
       <img src="./image 1.png" width="400" height="80" style="position: relative; top: px;">
   </div>
@@ -33,19 +33,25 @@
         </div>
         <div class="form">
             <h3>Enter your details</h3>
-            <form action="">
+            <form action="" style="padding: 30px 0px;">
                 <input type="image" src="" alt="">
-                <h3>Select</h3>
+                <label for="">Select</label><br>
 
-                <input type="radio" name="" id="">
+                <input type="radio" id="Select" name="select" value="">
                 <label for=""> Participant</label>
                  <br>
-                <input type="radio" name="" id="">
+                <input type="radio" id="Select" name="select">
                 <label for="">Hackathon</label>
 
-                <div>
-                <label for="">Email-id</label>
-                <input type="text" placeholder="Email id">
+                <div class="form_1">
+                <input type="text" placeholder="Email id" required>
+                <label for="name">Email-id</label>
+                </div>
+
+                <div class="form-upload">
+                  <label for="">Upload your image</label><br>
+                  <label for="files" class="btn-upload">Select Image</label>
+                  <input id="files" style="visibility:hidden;" type="file">
                 </div>
 
             </form>
