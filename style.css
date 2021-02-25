@@ -9,8 +9,13 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.imag{
+    width: 40%;
+}
+
 .navlink{
     margin-right: 15px;
+    width: 100%;
     color: #3E066A;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
@@ -43,28 +48,26 @@ body{
     top: 110px;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-auto-rows: minmax(10rem, auto);
-
 }
 
 .content div{
     background-color: #eee;
 }
+
 .logo{
     grid-column: 1/3;
-    max-height: auto;
     border-bottom: solid 1px black;
     padding: 30px;
 }
 .form{
     border-right: solid 1px black;
-    padding: 30px;
+    padding: 30px 0px 0px 30px;
 }
 .pic{
     text-align: center;
     padding: 30px;
 }
-.image img{
+.image_in .imgin{
     height: 70%;
     width: 70%;
 }
@@ -141,5 +144,18 @@ input{
     }
     .form{
         border-bottom: 1px solid black;
+    }
+    .imag{
+        width: 200px;
+    }
+    .brand-nav{
+        text-align: center;
+    }
+    .content{
+        top: 70px;
+    }
+    .navlink{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
