@@ -44,6 +44,7 @@ body{
 }
 
 .content{
+    min-height: 100vh;
     position: relative;
     top: 110px;
     display: grid;
@@ -158,4 +159,5 @@ input{
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
 }
