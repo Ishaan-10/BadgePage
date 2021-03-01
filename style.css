@@ -59,6 +59,7 @@ body{
     grid-column: 1/3;
     border-bottom: solid 1px black;
     padding: 30px;
+    height: auto;
 }
 .form{
     border-right: solid 1px black;
@@ -84,7 +85,15 @@ input{
     padding: 30px 0px;
 }
 
-.form_1 label{
+.form_1 .name{
+    transition: opacity 250ms ease, top 250ms ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.form_1 .email{
     transition: opacity 250ms ease, top 250ms ease;
     position: absolute;
     left: 0;
@@ -111,7 +120,12 @@ input{
     opacity: 0;
 }
 
-.form_1 input:focus + label, .form input:valid +label{
+.form_1 input:focus + .name, .form input:valid + .name{
+    opacity: 1;
+    top: 10px;
+}
+
+.form_1 input:focus + .email, .form input:valid + .email{
     opacity: 1;
     top: 10px;
 }
