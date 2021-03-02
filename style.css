@@ -61,9 +61,9 @@ body{
     padding: 30px;
     height: auto;
 }
-.form{
+.form_1{
+    padding:20px;
     border-right: solid 1px black;
-    padding: 30px 0px 0px 30px;
 }
 .pic{
     text-align: center;
@@ -74,71 +74,74 @@ body{
     width: 70%;
 }
 
-input{
+form label {
+    position: relative;
+    display: block;
+  }
+  form label input[type=text],  form label input[type=email]{
+    font: 18px Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    display: block;
     border: none;
+    padding: 20px;
+    font-size: 18px;
     outline: none;
-    background-color: transparent;
-}
-
-.form_1{
-    position: relative;
-    padding: 30px 0px;
-}
-
-.form_1 .name{
-    transition: opacity 250ms ease, top 250ms ease;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
-
-.form_1 .email{
-    transition: opacity 250ms ease, top 250ms ease;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
-
-.form_1 input{
-    border: 0;
-    border-bottom: 3px solid #3E066A;
-    z-index: 1;
-    position: relative;
-}
-
-.form_1 input::placeholder{
-    transition: opacity 250ms ease;
-    opacity: 1;
-}
-
-.form_1 input:focus, .form input:valid{
-    outline: 0;
-}
-.form_1 input:focus::placeholder, .form input:valid::placeholder{
-    opacity: 0;
-}
-
-.form_1 input:focus + .name, .form input:valid + .name{
+    transition: all 0.2s ease-in-out;
+  }
+  form label input::-moz-placeholder {
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #999;
+    font: 18px Helvetica, Arial, sans-serif;
+  }
+  form label input:-ms-input-placeholder {
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #999;
+    font: 18px Helvetica, Arial, sans-serif;
+  }
+  form label input::placeholder {
+    transition: all 0.2s ease-in-out;
+    color: #999;
+    font: 18px Helvetica, Arial, sans-serif;
+  }
+  form label input:focus, form label input.populated {
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+  form label input:focus::-moz-placeholder, form label input.populated::-moz-placeholder {
+    color: transparent;
+  }
+  form label input:focus:-ms-input-placeholder, form label input.populated:-ms-input-placeholder {
+    color: transparent;
+  }
+  form label input:focus::placeholder, form label input.populated::placeholder {
+    color: transparent;
+  }
+  form label input:focus + span, form label input.populated + span {
     opacity: 1;
     top: 10px;
-}
-
-.form_1 input:focus + .email, .form input:valid + .email{
-    opacity: 1;
-    top: 10px;
-}
+  }
+  form label span {
+    color: #3E066A;
+    font: 13px Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
 
 .btn-upload{
     color: #3E066A;
-    margin: 10px 0px;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     background: #FFCAFF;
     font-weight: 600;
-    transition: 0.5 background;
+    transition: background 0.5s;
     padding: 10px;
+    width: 50%;
+    text-align: center;
 }
 
 .btn-upload:hover{
@@ -147,6 +150,31 @@ input{
     box-shadow: 0px 10px -14px 14px #FFF;
     -webkit-box-shadow: 0px 10px -14px 14px #FFF;
 }
+
+
+.btn-upload-2{
+    color: white;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    background: #f24385;
+    font-weight: 600;
+    transition: background 0.5s;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.btn-upload-2:focus{
+outline: none;
+}
+
+.btn-upload-2:hover{
+    color: #3E066A;
+    background: #FFCAFF;
+    box-shadow: 0px 10px -14px 14px #FFF;
+    -webkit-box-shadow: 0px 10px -14px 14px #FFF;
+}
+
 
 @media (max-width:768px){
 

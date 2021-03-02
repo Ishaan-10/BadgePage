@@ -34,9 +34,8 @@
             <h3>Claim your badge</h3>
         </div>
 
-        <div class="form">
-            <h3>Enter your details</h3>
-            <form action="" style="padding: 30px 0px;">
+        <div class="form_1">
+            <h3>Enter your details</h3><br>
                 <input type="image" src="" alt="">
                 <label for="">Select</label><br>
 
@@ -44,21 +43,27 @@
                 <label for=""> Participant</label>
                  <br>
                 <input type="radio" id="Select" name="select">
-                <label for="">Hackathon</label>
+                <label for="">Hackathon</label><br><br>
 
-                <div class="form_1">
-                <input type="text" placeholder="Email id" required>
-                <label class="name">Name</label>
-                  <br><br>
-                <input type="text" placeholder="Email id" required>
-                <label class="email">Email-id</label>
-                </div>
+            <form>
+                  <label>
+                    <input id="fname" type="text" placeholder="Name" autocomplete="off" required>
+                    <span>Name</span>
+                  </label><br>
+                  
+                  <label>
+                    <input type="email" placeholder="Email" autocomplete="off" required>
+                    <span>Email</span>
+                  </label><br>
 
                 <div class="form-upload">
-                  <label for="">Upload your image</label><br>
+                  <label for="" style="margin-bottom: 20px;">Upload your image</label>
                   <label for="files" class="btn-upload">Select Image</label>
-                  <input id="files" style="visibility:hidden;" type="file">
+                  <input id="files" style="visibility:hidden;" type="file" required>
                 </div>
+
+                <input type="submit" class="btn-upload-2" value="Submit" style="border: none;">
+
             </form>
         </div>
 
@@ -71,6 +76,7 @@
 
         </div>
     </div>
-    
+
 </body>
+
 </html>
