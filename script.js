@@ -24,8 +24,14 @@ $(function() {
 let blackRect = new Image();
 blackRect.addEventListener('load', function(){
   partContext.drawImage(blackRect, 0, 0);
+
+  partContext.font = 'normal 515 60px Ubuntu';
+  partContext.fillStyle = 'white';
+  partContext.fillText('Saurav', 30, 80);
 }, false);
 blackRect.src = './images/black-rectangle.png';
+
+
 
 
 
