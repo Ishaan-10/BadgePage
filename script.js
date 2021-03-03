@@ -41,19 +41,19 @@ blackRect.src = './images/black-rectangle.png';
 
  let makeathonLogo = new Image();
  makeathonLogo.addEventListener('load', function(){
-    partContext.drawImage(makeathonLogo, 0, 179);
+    partContext.drawImage(makeathonLogo, 0, 183);
  }, false)
  makeathonLogo.src = './images/makeathon-logo-badge.png';
 
  let verticalGradient = new Image();
  verticalGradient.addEventListener('load', function(){
-   partContext.drawImage(verticalGradient, 362, 0);
+   partContext.drawImage(verticalGradient, 366, 0);
  }, false);
  verticalGradient.src = './images/gradient-vertical-rectangle.png';
 
  let bootcampRect = new Image();
  bootcampRect.addEventListener('load', function(){
-   partContext.drawImage(bootcampRect, 0, 536);
+   partContext.drawImage(bootcampRect, 0, 544);
  }, false);
  bootcampRect.src = './images/bootcamp.png'
 
