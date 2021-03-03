@@ -18,8 +18,16 @@ $(function() {
   const participantCanvas =  document.querySelector("#participant-canvas");
   const partContext = participantCanvas.getContext("2d");
 
-  partContext.fillStyle = '#0A0909'
-  partContext.fillRect(0, 0, 360, 179);
+  // partContext.fillStyle = '#0A0909'
+  // partContext.fillRect(0, 0, 360, 179);
+  
+let blackRect = new Image();
+blackRect.addEventListener('load', function(){
+  partContext.drawImage(blackRect, 0, 0);
+}, false);
+blackRect.src = './images/black-rectangle.png';
+
+
 
  let makeathonLogo = new Image();
  makeathonLogo.addEventListener('load', function(){
@@ -32,6 +40,12 @@ $(function() {
    partContext.drawImage(verticalGradient, 362, 0);
  }, false);
  verticalGradient.src = './images/gradient-vertical-rectangle.png';
+
+ let bootcampRect = new Image();
+ bootcampRect.addEventListener('load', function(){
+   partContext.drawImage(bootcampRect, 0, 536);
+ }, false);
+ bootcampRect.src = './images/bootcamp.png'
 
 
  download_img = function(el) {
