@@ -14,3 +14,25 @@ $(function() {
       });
     $('[href=#]').click(function(){return false});
   });
+
+  const participantCanvas =  document.querySelector("#participant-canvas");
+  const partContext = participantCanvas.getContext("2d");
+
+  partContext.fillStyle = '#0A0909'
+  partContext.fillRect(0, 0, 360, 179);
+
+ let makeathonLogo = new Image();
+ makeathonLogo.addEventListener('load', function(){
+    partContext.drawImage(makeathonLogo, 0, 182);
+ }, false)
+ makeathonLogo.src = './images/makeathon-logo-badge.png'
+
+
+ download_img = function(el) {
+  var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
+  el.href = image;
+};
+
+
+
+
