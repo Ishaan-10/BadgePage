@@ -23,9 +23,15 @@ $(function() {
 
  let makeathonLogo = new Image();
  makeathonLogo.addEventListener('load', function(){
-    partContext.drawImage(makeathonLogo, 0, 182);
+    partContext.drawImage(makeathonLogo, 0, 179);
  }, false)
- makeathonLogo.src = './images/makeathon-logo-badge.png'
+ makeathonLogo.src = './images/makeathon-logo-badge.png';
+
+ let verticalGradient = new Image();
+ verticalGradient.addEventListener('load', function(){
+   partContext.drawImage(verticalGradient, 362, 0);
+ }, false);
+ verticalGradient.src = './images/gradient-vertical-rectangle.png';
 
 
  download_img = function(el) {
