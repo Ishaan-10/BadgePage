@@ -28,6 +28,10 @@ blackRect.addEventListener('load', function(){
   partContext.font = 'normal 515 60px Ubuntu';
   partContext.fillStyle = 'white';
   partContext.fillText('Saurav', 30, 80);
+
+  partContext.font = 'normal 515 24px Ubuntu';
+  partContext.fillStyle = 'white';
+  partContext.fillText('Shrivastav.', 30, 110);
 }, false);
 blackRect.src = './images/black-rectangle.png';
 
