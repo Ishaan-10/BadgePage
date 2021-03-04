@@ -34,8 +34,6 @@ hackathonRadioBtn.addEventListener('click', () => {
   }
 });
 
-let userUploadedImage;
-
 const detailsForm = document.getElementById('details-form');
 detailsForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -56,7 +54,8 @@ detailsForm.addEventListener('submit', event => {
     })
     // console.log(reader.result);ss
     // addUserImgInParticipantCanvas(reader.result);
-    
+    let name = document.getElementById('fname').value;
+    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
   }
 })
 
@@ -74,11 +73,11 @@ blackRect.addEventListener('load', function(){
 
   partContext.font = 'normal 515 60px Ubuntu';
   partContext.fillStyle = 'white';
-  partContext.fillText('Saurav', 30, 80);
+  partContext.fillText('Your', 30, 80);
 
   partContext.font = 'normal 515 24px Ubuntu';
   partContext.fillStyle = 'white';
-  partContext.fillText('Shrivastav.', 30, 110);
+  partContext.fillText('Name.', 30, 110);
 }, false);
 blackRect.src = './images/black-rectangle.png';
 
@@ -110,11 +109,28 @@ blackRect.src = './images/black-rectangle.png';
   userImgRect.src = userImgSrc;
 }
 
+function updateNameInParticipantCanvas(firstName, lastName){
+  let blackRect = new Image();
+  blackRect.addEventListener('load', function(){
+    partContext.drawImage(blackRect, 0, 0);
+
+    partContext.font = 'normal 515 60px Ubuntu';
+    partContext.fillStyle = 'white';
+    partContext.fillText(`${firstName}`, 30, 80);
+
+    partContext.font = 'normal 515 24px Ubuntu';
+    partContext.fillStyle = 'white';
+    partContext.fillText(`${lastName}.`, 30, 110);
+  }, false);
+  blackRect.src = './images/black-rectangle.png';
+}
+
 download_img = function(el) {
   var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
   el.href = image;
 };
 
+// Bug, click on hackathon, click on bootcamp, then upload image, it doesn't work
 
 
 
