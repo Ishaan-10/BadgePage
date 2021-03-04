@@ -83,6 +83,15 @@ detailsForm.addEventListener('submit', event => {
     let verticalGradient = new Image();
     verticalGradient.addEventListener('load', function(){
       partContext.drawImage(verticalGradient, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
     }, false);
     verticalGradient.src = './images/participant-rectangle.png';
 
@@ -91,8 +100,23 @@ detailsForm.addEventListener('submit', event => {
       partContext.drawImage(verticalGradient2, 366, 0);
     }, false);
     verticalGradient2.src = './images/participant-rectangle.png';
-
     
+    let bootcampRect = new Image();
+    bootcampRect.addEventListener('load', function(){
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+
+    }, false);
+    bootcampRect.src = './images/hackathon-team-name-rect.png';
+
   }
 })
 
