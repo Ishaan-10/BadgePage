@@ -58,8 +58,10 @@
                 </label><br>
 
                 <div class="form-upload">
-                  <label for="" style="margin-bottom: 20px;">Upload your image</label>
+                  <label for="">Upload your image</label>
                   <label for="files" class="btn-upload">Select Image</label>
+                  <!-- TICK FOR WHEN IMAGE HAS BEEN UPLOADED -->
+                  <img src="images\PinClipart.com_garbage-can-clipart_1858206.png" alt="">
                   <input id="files" style="visibility:hidden;" type="file" required>
                 </div>
 
@@ -76,8 +78,12 @@
             </div> -->
             <canvas id="participant-canvas" class="badge-canvas" width="449px" height="606px">
             </canvas>
+        <div>
+        <button type="button" id="download" download="badge.png" href="" onclick="download_img(this);">Download</button>
+        <button type="button" id="download" download="badge.png" href="" onclick="">LinkedIn</button>
         </div>
-        <a id="download" download="badge.png" href="" onclick="download_img(this);">Download to badge.png</a>
+        </div>
+        
     </div>
     
     <script src="script.js"></script>
