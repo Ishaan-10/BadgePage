@@ -44,6 +44,7 @@ detailsForm.addEventListener('submit', event => {
     const fileInput = document.getElementById('files');
     // userImg contains the actual image file
     const userUploadedImage = fileInput.files[0];
+    addUserImgInParticipantCanvas(userUploadedImage);
   }
 })
 
@@ -87,6 +88,14 @@ blackRect.src = './images/black-rectangle.png';
    partContext.drawImage(bootcampRect, 0, 544);
  }, false);
  bootcampRect.src = './images/bootcamp.png'
+
+ function addUserImgInParticipantCanvas(userImgSrc){
+  let userImgRect = new Image();
+  userImgRect.addEventListener('load', function(){
+    partContext.drawImage(userImgRect, 353, 183, 200, 424);
+  }, false);
+  userImgRect.src = userImg;
+}
 
 download_img = function(el) {
   var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
