@@ -1,3 +1,4 @@
+// jQuery for the name and email field effects on clicking the text boxes
 $(function() {  
     $('.btn-6')
       .on('mouseenter', function(e) {
@@ -32,6 +33,19 @@ hackathonRadioBtn.addEventListener('click', () => {
     emailField.required = true;
   }
 });
+
+let userUploadedImage;
+
+const detailsForm = document.getElementById('details-form');
+detailsForm.addEventListener('submit', event => {
+  event.preventDefault();
+  console.log('hi');
+  if(bootcampRadioBtn.checked){
+    const fileInput = document.getElementById('files');
+    // userImg contains the actual image file
+    const userUploadedImage = fileInput.files[0];
+  }
+})
 
 
 
@@ -74,10 +88,7 @@ blackRect.src = './images/black-rectangle.png';
  }, false);
  bootcampRect.src = './images/bootcamp.png'
 
-
-
-
- download_img = function(el) {
+download_img = function(el) {
   var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
   el.href = image;
 };
