@@ -57,9 +57,90 @@ detailsForm.addEventListener('submit', event => {
     let name = document.getElementById('fname').value;
     updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
   }
+  if(hackathonRadioBtn.checked){
+    const fileInput = document.getElementById('files');
+    // userImg contains the actual image file
+    const userUploadedImage = fileInput.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(userUploadedImage);
+    // reader.onLoad = function(){
+    //   console.log(reader.result);
+    //   addUserImgInParticipantCanvas(reader.result);
+    // }
+    reader.addEventListener('load', () => {
+      console.log(reader.result);
+      addUserImgInParticipantCanvas(reader.result);
+    })
+    // console.log(reader.result);ss
+    // addUserImgInParticipantCanvas(reader.result);
+    let name = document.getElementById('fname').value;
+    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
+  }
+  if(hackathonRadioBtn.checked){
+
+    let emailID = document.getElementById('email-field').value;
+    let request = new XMLHttpRequest();
+
+    request.open("GET", 'http://5d547a2598e3.ngrok.io/getyourbadge/profile/');
+    request.setRequestHeader("email", emailID); 
+    request.send();
+    request.onload = () => {
+      console.log(request);
+      console.log(request.status);
+    }
+
+
+    let name = document.getElementById('fname').value;
+    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
+
+    let verticalGradient = new Image();
+    verticalGradient.addEventListener('load', function(){
+      partContext.drawImage(verticalGradient, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+      partContext.drawImage(verticalGradient2, 366, 0);
+    }, false);
+    verticalGradient.src = './images/participant-rectangle.png';
+
+    let verticalGradient2 = new Image();
+    verticalGradient2.addEventListener('load', function(){
+      partContext.drawImage(verticalGradient2, 366, 0);
+    }, false);
+    verticalGradient2.src = './images/participant-rectangle.png';
+    
+    let bootcampRect = new Image();
+    bootcampRect.addEventListener('load', function(){
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+      partContext.drawImage(bootcampRect, 0, 544);
+
+      partContext.font = 'normal 515 24px Ubuntu';
+      partContext.fillStyle = '#0A0909';
+      partContext.fillText('Whitehat Sr', 49, 585);
+
+    }, false);
+    bootcampRect.src = './images/hackathon-team-name-rect.png';
+
+     
+
+
+
+
+  }
 })
-
-
 
 const participantCanvas =  document.querySelector("#participant-canvas");
 const partContext = participantCanvas.getContext("2d");
