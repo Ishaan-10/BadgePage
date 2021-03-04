@@ -54,7 +54,7 @@ detailsForm.addEventListener('submit', event => {
       console.log(reader.result);
       addUserImgInParticipantCanvas(reader.result);
     })
-    // console.log(reader.result);
+    // console.log(reader.result);ss
     // addUserImgInParticipantCanvas(reader.result);
     
   }
@@ -102,10 +102,10 @@ blackRect.src = './images/black-rectangle.png';
  bootcampRect.src = './images/bootcamp.png'
 
  function addUserImgInParticipantCanvas(userImgSrc){
-   console.log(userImgSrc);
+  console.log(userImgSrc);
   let userImgRect = new Image();
   userImgRect.addEventListener('load', function(){
-    partContext.drawImage(userImgRect, 353, 183, 200, 424);
+    partContext.drawImage(userImgRect, 253, 183, 200, 424);
   }, false);
   userImgRect.src = userImgSrc;
 }
