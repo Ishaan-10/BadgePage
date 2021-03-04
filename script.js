@@ -57,9 +57,44 @@ detailsForm.addEventListener('submit', event => {
     let name = document.getElementById('fname').value;
     updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
   }
+  if(hackathonRadioBtn.checked){
+    const fileInput = document.getElementById('files');
+    // userImg contains the actual image file
+    const userUploadedImage = fileInput.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(userUploadedImage);
+    // reader.onLoad = function(){
+    //   console.log(reader.result);
+    //   addUserImgInParticipantCanvas(reader.result);
+    // }
+    reader.addEventListener('load', () => {
+      console.log(reader.result);
+      addUserImgInParticipantCanvas(reader.result);
+    })
+    // console.log(reader.result);ss
+    // addUserImgInParticipantCanvas(reader.result);
+    let name = document.getElementById('fname').value;
+    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
+  }
+  if(hackathonRadioBtn.checked){
+    let name = document.getElementById('fname').value;
+    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
+
+    let verticalGradient = new Image();
+    verticalGradient.addEventListener('load', function(){
+      partContext.drawImage(verticalGradient, 366, 0);
+    }, false);
+    verticalGradient.src = './images/participant-rectangle.png';
+
+    let verticalGradient2 = new Image();
+    verticalGradient2.addEventListener('load', function(){
+      partContext.drawImage(verticalGradient2, 366, 0);
+    }, false);
+    verticalGradient2.src = './images/participant-rectangle.png';
+
+    
+  }
 })
-
-
 
 const participantCanvas =  document.querySelector("#participant-canvas");
 const partContext = participantCanvas.getContext("2d");
@@ -124,6 +159,45 @@ function updateNameInParticipantCanvas(firstName, lastName){
   }, false);
   blackRect.src = './images/black-rectangle.png';
 }
+
+// const hackathonCanvas =  document.querySelector("#hackathon-canvas");
+// const hackContext = participantCanvas.getContext("2d");
+
+//   // hackContext.fillStyle = '#0A0909'
+//   // hackContext.fillRect(0, 0, 360, 179);
+  
+// let blackRect2 = new Image();
+// blackRect2.addEventListener('load', function(){
+//   hackContext.drawImage(blackRect, 0, 0);
+
+//   hackContext.font = 'normal 515 60px Ubuntu';
+//   hackContext.fillStyle = 'white';
+//   hackContext.fillText('Your', 30, 80);
+
+//   hackContext.font = 'normal 515 24px Ubuntu';
+//   hackContext.fillStyle = 'white';
+//   hackContext.fillText('Name.', 30, 110);
+// }, false);
+// blackRect2.src = './images/black-rectangle.png';
+
+
+//  let makeathonLogo2 = new Image();
+//  makeathonLogo2.addEventListener('load', function(){
+//     hackContext.drawImage(makeathonLogo2, 0, 183);
+//  }, false)
+//  makeathonLogo2.src = './images/makeathon-logo-badge.png';
+
+//  let verticalGradient2 = new Image();
+//  verticalGradient2.addEventListener('load', function(){
+//    hackContext.drawImage(verticalGradient2, 366, 0);
+//  }, false);
+//  verticalGradient2.src = './images/participant-rectangle.png';
+
+//  let bootcampRect2 = new Image();
+//  bootcampRect2.addEventListener('load', function(){
+//    hackContext.drawImage(bootcampRect2, 0, 544);
+//  }, false);
+//  bootcampRect2.src = './images/hackathon-team-name-rect.png'
 
 download_img = function(el) {
   var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
