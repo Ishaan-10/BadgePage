@@ -44,7 +44,19 @@ detailsForm.addEventListener('submit', event => {
     const fileInput = document.getElementById('files');
     // userImg contains the actual image file
     const userUploadedImage = fileInput.files[0];
-    addUserImgInParticipantCanvas(userUploadedImage);
+    const reader = new FileReader();
+    reader.readAsDataURL(userUploadedImage);
+    // reader.onLoad = function(){
+    //   console.log(reader.result);
+    //   addUserImgInParticipantCanvas(reader.result);
+    // }
+    reader.addEventListener('load', () => {
+      console.log(reader.result);
+      addUserImgInParticipantCanvas(reader.result);
+    })
+    // console.log(reader.result);
+    // addUserImgInParticipantCanvas(reader.result);
+    
   }
 })
 
@@ -90,11 +102,12 @@ blackRect.src = './images/black-rectangle.png';
  bootcampRect.src = './images/bootcamp.png'
 
  function addUserImgInParticipantCanvas(userImgSrc){
+   console.log(userImgSrc);
   let userImgRect = new Image();
   userImgRect.addEventListener('load', function(){
     partContext.drawImage(userImgRect, 353, 183, 200, 424);
   }, false);
-  userImgRect.src = userImg;
+  userImgRect.src = userImgSrc;
 }
 
 download_img = function(el) {
