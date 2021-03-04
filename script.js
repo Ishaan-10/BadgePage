@@ -26,6 +26,13 @@ bootcampRadioBtn.addEventListener('click', () => {
   }
 });
 
+hackathonRadioBtn.addEventListener('click', () => {
+  if(hackathonRadioBtn.checked){
+    emailField.style.display = 'block';
+    emailField.required = true;
+  }
+});
+
 
 
 const participantCanvas =  document.querySelector("#participant-canvas");
