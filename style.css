@@ -207,3 +207,9 @@ outline: none;
 a{
     color:red;
 }
+
+#email-field{
+    /* By default the bootcamp radiobox is checked, where the email field */
+    /* is not to be displayed */
+    display:none;
+}

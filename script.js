@@ -15,8 +15,21 @@ $(function() {
     $('[href=#]').click(function(){return false});
   });
 
-  const participantCanvas =  document.querySelector("#participant-canvas");
-  const partContext = participantCanvas.getContext("2d");
+const bootcampRadioBtn = document.getElementById('bootcamp-radio-btn');
+const hackathonRadioBtn = document.getElementById('hackathon-radio-btn');
+
+const emailField = document.getElementById('email-field');
+
+bootcampRadioBtn.addEventListener('click', () => {
+  if(bootcampRadioBtn.checked){
+    emailField.style.display = 'none';
+  }
+});
+
+
+
+const participantCanvas =  document.querySelector("#participant-canvas");
+const partContext = participantCanvas.getContext("2d");
 
   // partContext.fillStyle = '#0A0909'
   // partContext.fillRect(0, 0, 360, 179);
@@ -36,9 +49,6 @@ blackRect.addEventListener('load', function(){
 blackRect.src = './images/black-rectangle.png';
 
 
-
-
-
  let makeathonLogo = new Image();
  makeathonLogo.addEventListener('load', function(){
     partContext.drawImage(makeathonLogo, 0, 183);
@@ -56,6 +66,8 @@ blackRect.src = './images/black-rectangle.png';
    partContext.drawImage(bootcampRect, 0, 544);
  }, false);
  bootcampRect.src = './images/bootcamp.png'
+
+
 
 
  download_img = function(el) {
