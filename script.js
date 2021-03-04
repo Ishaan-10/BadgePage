@@ -77,6 +77,19 @@ detailsForm.addEventListener('submit', event => {
     updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
   }
   if(hackathonRadioBtn.checked){
+
+    let emailID = document.getElementById('email-field').value;
+    let request = new XMLHttpRequest();
+
+    request.open("GET", 'http://5d547a2598e3.ngrok.io/getyourbadge/profile/');
+    request.setRequestHeader("email", emailID); 
+    request.send();
+    request.onload = () => {
+      console.log(request);
+      console.log(request.status);
+    }
+
+
     let name = document.getElementById('fname').value;
     updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
 
@@ -114,8 +127,17 @@ detailsForm.addEventListener('submit', event => {
       partContext.drawImage(bootcampRect, 0, 544);
       partContext.drawImage(bootcampRect, 0, 544);
 
+      partContext.font = 'normal 515 24px Ubuntu';
+      partContext.fillStyle = '#0A0909';
+      partContext.fillText('Whitehat Sr', 49, 585);
+
     }, false);
     bootcampRect.src = './images/hackathon-team-name-rect.png';
+
+     
+
+
+
 
   }
 })
@@ -183,45 +205,6 @@ function updateNameInParticipantCanvas(firstName, lastName){
   }, false);
   blackRect.src = './images/black-rectangle.png';
 }
-
-// const hackathonCanvas =  document.querySelector("#hackathon-canvas");
-// const hackContext = participantCanvas.getContext("2d");
-
-//   // hackContext.fillStyle = '#0A0909'
-//   // hackContext.fillRect(0, 0, 360, 179);
-  
-// let blackRect2 = new Image();
-// blackRect2.addEventListener('load', function(){
-//   hackContext.drawImage(blackRect, 0, 0);
-
-//   hackContext.font = 'normal 515 60px Ubuntu';
-//   hackContext.fillStyle = 'white';
-//   hackContext.fillText('Your', 30, 80);
-
-//   hackContext.font = 'normal 515 24px Ubuntu';
-//   hackContext.fillStyle = 'white';
-//   hackContext.fillText('Name.', 30, 110);
-// }, false);
-// blackRect2.src = './images/black-rectangle.png';
-
-
-//  let makeathonLogo2 = new Image();
-//  makeathonLogo2.addEventListener('load', function(){
-//     hackContext.drawImage(makeathonLogo2, 0, 183);
-//  }, false)
-//  makeathonLogo2.src = './images/makeathon-logo-badge.png';
-
-//  let verticalGradient2 = new Image();
-//  verticalGradient2.addEventListener('load', function(){
-//    hackContext.drawImage(verticalGradient2, 366, 0);
-//  }, false);
-//  verticalGradient2.src = './images/participant-rectangle.png';
-
-//  let bootcampRect2 = new Image();
-//  bootcampRect2.addEventListener('load', function(){
-//    hackContext.drawImage(bootcampRect2, 0, 544);
-//  }, false);
-//  bootcampRect2.src = './images/hackathon-team-name-rect.png'
 
 download_img = function(el) {
   var image = document.getElementById('participant-canvas').toDataURL("image/jpg");
