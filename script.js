@@ -21,6 +21,19 @@ const hackathonRadioBtn = document.getElementById('hackathon-radio-btn');
 
 const emailField = document.getElementById('email-field');
 
+if(bootcampRadioBtn.checked){
+  emailField.style.display = 'none';
+}
+
+if(hackathonRadioBtn.checked){
+  emailField.style.display = 'block';
+  emailField.required = true;
+}
+
+
+
+
+
 bootcampRadioBtn.addEventListener('click', () => {
   if(bootcampRadioBtn.checked){
     emailField.style.display = 'none';
