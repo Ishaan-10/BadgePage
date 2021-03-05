@@ -68,7 +68,7 @@ detailsForm.addEventListener('submit', event => {
     //   addUserImgInParticipantCanvas(reader.result);
     // }
     reader.addEventListener('load', () => {
-      console.log(reader.result);
+      // console.log(reader.result);
       addUserImgInParticipantCanvas(reader.result);
     })
     // console.log(reader.result);ss
@@ -81,7 +81,7 @@ detailsForm.addEventListener('submit', event => {
     let emailID = document.getElementById('email-field').value;
     let request = new XMLHttpRequest();
 
-    request.open("GET", 'http://5d547a2598e3.ngrok.io/getyourbadge/profile/');
+    request.open("GET", 'https://makeathon3077.mlsctiet.co.in/getyourbadge/profile/');
     request.setRequestHeader("email", emailID); 
     request.send();
     request.onload = () => {
@@ -182,7 +182,7 @@ blackRect.src = './images/black-rectangle.png';
  bootcampRect.src = './images/bootcamp.png'
 
  function addUserImgInParticipantCanvas(userImgSrc){
-  console.log(userImgSrc);
+  // console.log(userImgSrc);
   let userImgRect = new Image();
   userImgRect.addEventListener('load', function(){
     partContext.drawImage(userImgRect, 253, 183, 200, 424);
