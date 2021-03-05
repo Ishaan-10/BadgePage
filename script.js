@@ -84,15 +84,15 @@ detailsForm.addEventListener('submit', event => {
           let verticalGradient = new Image();
           verticalGradient.addEventListener('load', function(){
             partContext.drawImage(verticalGradient, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
-            partContext.drawImage(verticalGradient2, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
           }, false);
           verticalGradient.src = './images/participant-rectangle.png';     
 
@@ -116,6 +116,20 @@ detailsForm.addEventListener('submit', event => {
 
           }, false);
           bootcampRect.src = './images/hackathon-team-name-rect.png';
+
+          const fileInput = document.getElementById('files');
+          // userImg contains the actual image file
+          const userUploadedImage = fileInput.files[0];
+          const reader = new FileReader();
+          reader.readAsDataURL(userUploadedImage);
+          // reader.onLoad = function(){
+          //   console.log(reader.result);
+          //   addUserImgInParticipantCanvas(reader.result);
+          // }
+          reader.addEventListener('load', () => {
+            console.log(reader.result);
+            addUserImgInParticipantCanvas(reader.result);
+          })
         }
       }
     }
