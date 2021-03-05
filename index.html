@@ -23,8 +23,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active navlink" href="#"> &nbsp;&nbsp;Website&nbsp;&nbsp;</a>
-        <a class="nav-item nav-link navlink" href="#about"> &nbsp;&nbsp;Register&nbsp;&nbsp; </a>
+        <a class="nav-item nav-link active navlink" href="https://makeathon3077.mlsctiet.co.in/"> &nbsp;&nbsp;Website&nbsp;&nbsp;</a>
+        <a class="nav-item nav-link navlink" href="https://devfolio.co/makeathon3077/dashboard"> &nbsp;&nbsp;Dashboard&nbsp;&nbsp; </a>
       </div>
     </div>
 </nav>
@@ -58,11 +58,11 @@
                 </label><br>
 
                 <div class="form-upload">
-                  <label for="">Upload your image</label>
-                  <label for="files" class="btn-upload">Select Image</label>
+                  <label for="">Upload your image (portrait works the best) </label>
+                  <label id="select-image" for="files" class="btn-upload">Select Image</label>
                   <!-- TICK FOR WHEN IMAGE HAS BEEN UPLOADED -->
-                  <img src="images\PinClipart.com_garbage-can-clipart_1858206.png" alt="">
-                  <input id="files" style="visibility:hidden;" type="file" required>
+                  <img id="green-tick" src="images\PinClipart.com_garbage-can-clipart_1858206.png" alt="">
+                  <input id="files" style="visibility:hidden;" type="file" accept="image/*" required>
                 </div>
 
                 <input type="submit" class="btn-upload-2" value="Submit" style="border: none;">
@@ -71,7 +71,7 @@
         </div>
 
         <div class="pic">
-            <h3>Preview</h3>
+            <!-- <h3>Preview</h3> -->
 
             <!-- <div class="image_in">
                 <img src="https://www.brightful.me/content/images/2020/07/david-kovalenko-G85VuTpw6jg-unsplash.jpg" alt="image" class="imgin">
@@ -80,7 +80,7 @@
             </canvas>
         <div>
         <button type="button" id="download" download="badge.png" href="" onclick="download_img(this);"><a id="download" download="badge.png" href="" onclick="download_img(this);">Download</a></button>
-        <button type="button" id="download" download="badge.png" href="" onclick="">LinkedIn</button>
+        <!-- <button type="button" id="download" download="badge.png" href="" onclick="">LinkedIn</button> -->
         </div>
         </div>
         
