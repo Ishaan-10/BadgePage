@@ -20,7 +20,6 @@ const bootcampRadioBtn = document.getElementById('bootcamp-radio-btn');
 const hackathonRadioBtn = document.getElementById('hackathon-radio-btn');
 
 const emailField = document.getElementById('email-field');
-
 if(bootcampRadioBtn.checked){
   emailField.style.display = 'none';
 }
@@ -47,6 +46,19 @@ hackathonRadioBtn.addEventListener('click', () => {
   }
 });
 
+let greenTick = document.getElementById('green-tick');
+
+// let uploadImageBtn = document.getElementById('select-image');
+// uploadImageBtn.addEventListener('click', () => {
+//   const fileInput = document.getElementById('files');
+//   // userImg contains the actual image file
+//   const userUploadedImage = fileInput.files[0];
+//   console.log(userUploadedImage);
+//   if(userUploadedImage){
+//     greenTick.style.display = 'inline';
+//   }
+// })
+
 const detailsForm = document.getElementById('details-form');
 detailsForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -55,6 +67,7 @@ detailsForm.addEventListener('submit', event => {
     const fileInput = document.getElementById('files');
     // userImg contains the actual image file
     const userUploadedImage = fileInput.files[0];
+    console.log(userUploadedImage);
     const reader = new FileReader();
     reader.readAsDataURL(userUploadedImage);
     // reader.onLoad = function(){
@@ -151,7 +164,6 @@ detailsForm.addEventListener('submit', event => {
 
 const participantCanvas =  document.querySelector("#participant-canvas");
 const partContext = participantCanvas.getContext("2d");
-console.log('I am out');
 
   // partContext.fillStyle = '#0A0909'
   // partContext.fillRect(0, 0, 360, 179);

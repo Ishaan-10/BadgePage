@@ -59,10 +59,10 @@
 
                 <div class="form-upload">
                   <label for="">Upload your image</label>
-                  <label for="files" class="btn-upload">Select Image</label>
+                  <label id="select-image" for="files" class="btn-upload">Select Image</label>
                   <!-- TICK FOR WHEN IMAGE HAS BEEN UPLOADED -->
-                  <img src="images\PinClipart.com_garbage-can-clipart_1858206.png" alt="">
-                  <input id="files" style="visibility:hidden;" type="file" required>
+                  <img id="green-tick" src="images\PinClipart.com_garbage-can-clipart_1858206.png" alt="">
+                  <input id="files" style="visibility:hidden;" type="file" accept="image/*" required>
                 </div>
 
                 <input type="submit" class="btn-upload-2" value="Submit" style="border: none;">
@@ -80,7 +80,7 @@
             </canvas>
         <div>
         <button type="button" id="download" download="badge.png" href="" onclick="download_img(this);"><a id="download" download="badge.png" href="" onclick="download_img(this);">Download</a></button>
-        <button type="button" id="download" download="badge.png" href="" onclick="">LinkedIn</button>
+        <!-- <button type="button" id="download" download="badge.png" href="" onclick="">LinkedIn</button> -->
         </div>
         </div>
         
