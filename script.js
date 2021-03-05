@@ -57,25 +57,7 @@ detailsForm.addEventListener('submit', event => {
     let name = document.getElementById('fname').value;
     updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
   }
-  if(hackathonRadioBtn.checked){
-    const fileInput = document.getElementById('files');
-    // userImg contains the actual image file
-    const userUploadedImage = fileInput.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(userUploadedImage);
-    // reader.onLoad = function(){
-    //   console.log(reader.result);
-    //   addUserImgInParticipantCanvas(reader.result);
-    // }
-    reader.addEventListener('load', () => {
-      // console.log(reader.result);
-      addUserImgInParticipantCanvas(reader.result);
-    })
-    // console.log(reader.result);ss
-    // addUserImgInParticipantCanvas(reader.result);
-    let name = document.getElementById('fname').value;
-    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
-  }
+
   if(hackathonRadioBtn.checked){
 
     let emailID = document.getElementById('email-field').value;
@@ -87,63 +69,76 @@ detailsForm.addEventListener('submit', event => {
     request.onload = () => {
       console.log(request);
       console.log(request.status);
+      if(request.status === 200){
+        console.log(JSON.parse(request.response));
+        let response = JSON.parse(request.response);
+        if(response.error == 'Invalid email-id'){
+          alert('Enter valid email id used to sign up to Makeathon 3077');
+        }
+        else{
+          let name = document.getElementById('fname').value;
+          updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
+
+          let teamName = response.teamName;
+
+          let verticalGradient = new Image();
+          verticalGradient.addEventListener('load', function(){
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+            partContext.drawImage(verticalGradient, 366, 0);
+          }, false);
+          verticalGradient.src = './images/participant-rectangle.png';     
+
+          
+          let bootcampRect = new Image();
+          bootcampRect.addEventListener('load', function(){
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+            partContext.drawImage(bootcampRect, 0, 544);
+
+            partContext.font = 'normal 515 24px Ubuntu';
+            partContext.fillStyle = '#0A0909';
+            partContext.fillText(`${teamName}`, 49, 585);
+
+          }, false);
+          bootcampRect.src = './images/hackathon-team-name-rect.png';
+
+          const fileInput = document.getElementById('files');
+          // userImg contains the actual image file
+          const userUploadedImage = fileInput.files[0];
+          const reader = new FileReader();
+          reader.readAsDataURL(userUploadedImage);
+          // reader.onLoad = function(){
+          //   console.log(reader.result);
+          //   addUserImgInParticipantCanvas(reader.result);
+          // }
+          reader.addEventListener('load', () => {
+            console.log(reader.result);
+            addUserImgInParticipantCanvas(reader.result);
+          })
+        }
+      }
     }
-
-
-    let name = document.getElementById('fname').value;
-    updateNameInParticipantCanvas(name.substring(0, name.indexOf(' ') + 1), name.substring(name.indexOf(' '), name.length));
-
-    let verticalGradient = new Image();
-    verticalGradient.addEventListener('load', function(){
-      partContext.drawImage(verticalGradient, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-      partContext.drawImage(verticalGradient2, 366, 0);
-    }, false);
-    verticalGradient.src = './images/participant-rectangle.png';
-
-    let verticalGradient2 = new Image();
-    verticalGradient2.addEventListener('load', function(){
-      partContext.drawImage(verticalGradient2, 366, 0);
-    }, false);
-    verticalGradient2.src = './images/participant-rectangle.png';
-    
-    let bootcampRect = new Image();
-    bootcampRect.addEventListener('load', function(){
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-      partContext.drawImage(bootcampRect, 0, 544);
-
-      partContext.font = 'normal 515 24px Ubuntu';
-      partContext.fillStyle = '#0A0909';
-      partContext.fillText('Whitehat Sr', 49, 585);
-
-    }, false);
-    bootcampRect.src = './images/hackathon-team-name-rect.png';
-
-     
-
-
-
-
   }
 })
 
 const participantCanvas =  document.querySelector("#participant-canvas");
 const partContext = participantCanvas.getContext("2d");
+console.log('I am out');
 
   // partContext.fillStyle = '#0A0909'
   // partContext.fillRect(0, 0, 360, 179);
